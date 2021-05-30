@@ -8,7 +8,7 @@ Backend-
 Node js
 
 Database-
-MySQL
+MongoDB
 
 Frontend/views-
 Handelbars, CSS
