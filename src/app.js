@@ -8,6 +8,7 @@ const fs = require('fs');
 const app = express();
 const port =process.env.PORT || 8000 ;
 
+
 //
 //const dataModel = require('../src/models/usermessage');
 
@@ -67,7 +68,7 @@ app.get('/blogs', (req,res) => {
 })
 
 app.get('*', (req,res) => {
-    res.send('404',"<h1>Error while trying to request non existing page !! </h1>");
+    res.status('404').send("<h1>Error while trying to request non existing page !! </h1>");
 });
 
 app.listen(port, () => {
