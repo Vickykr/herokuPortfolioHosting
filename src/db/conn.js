@@ -1,7 +1,9 @@
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
-const DB = 'mongodb+srv://vicky:atlaspassword@cluster0.xgtiy.mongodb.net/portfolioDB?retryWrites=true&w=majority';
-
+dotenv.config({path:'./config.env'});
+//const DB = 'mongodb+srv://vicky:Passwordhere@cluster0.xgtiy.mongodb.net/portfolioDB?retryWrites=true&w=majority';
+const DB = process.env.DATABASE;
 mongoose.connect(DB, {
     useCreateIndex:true,
     useNewUrlParser:true,
@@ -11,6 +13,10 @@ mongoose.connect(DB, {
 }).catch((error) => {
     console.log(error);
 });
+
+
+
+
 //creating DB
 /*mongoose.connect("mongodb://localhost:27017/protfolio", {
     useCreateIndex:true,
